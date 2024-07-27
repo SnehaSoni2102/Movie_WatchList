@@ -1,5 +1,14 @@
 # MOVIE_WATCH_LIST
 
+-Created React app 
+-configured TailwindCss 
+-Header
+-Routing of Aap
+-Login form 
+-Sign up form 
+-form validation
+-React hooks - useState, useEffect, useRef.
+
 ## Features
 ### Login/Sign 
 Sign In/ Sign up form
