@@ -1,3 +1,54 @@
+# MOVIE_WATCH_LIST
+
+## Features
+### Login/Sign 
+Sign In/ Sign up form
+   ##
+redirect to browser page
+### Search( after authentication)
+   
+### SearchBar
+    - Search Bar
+    - Movie Suggestion    
+
+
+
+## Install Tailwind CSS
+npm install -D tailwindcss
+##
+npx tailwindcss init
+##
+this line will generate tailwind.config.js file.
+
+### Modify tailwind.config.js file
+
+/** @type {import('tailwindcss').Config} */
+##
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+### Add the Tailwind directives to your CSS
+
+Add the @tailwind directives for each of Tailwind’s layers to your ./src/index.css file.
+##
+@tailwind base;
+##
+@tailwind components;
+##
+@tailwind utilities;
+
+## ShortCuts
+Rafce - react arrow function component export.
+##
+shortcut to auto write component in jsx,js file
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
