@@ -5,6 +5,9 @@
 Sign In/ Sign up form
    ##
 redirect to browser page
+
+Sign In form - Register user can directly enter there email and password and by clicking sign in button redirected to search page  
+ 
 ### Search( after authentication)
    
 ### SearchBar
