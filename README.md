@@ -16,7 +16,9 @@
 ##
 -React hooks - useState, useEffect, useRef.
 ##
-validation on form
+validation on form - using rejex for email and password validation. If user is typing wrong email formate or password not including Upper Case and Lower case letters , Number, Special Character.
+##
+Created Sign Up/Sign In Authentication - if user is Authenticated then only they can go to search page. Implemented this using FiIREBASE- Create a password-based accoun and Sign in a user with an email address and password.
 ##
 
 ## Features
