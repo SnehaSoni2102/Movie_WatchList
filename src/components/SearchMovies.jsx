@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Header } from "./Header";
 
 export const SearchMovie = () => {
   const [movies, setMovies] = useState(null);
@@ -10,7 +11,7 @@ export const SearchMovie = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://www.omdbapi.com/?s=hindi&apikey=2779dc29");
+      const response = await fetch("https://www.omdbapi.com/?t=kabhi&apikey=2779dc29");
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -27,6 +28,7 @@ export const SearchMovie = () => {
 
   return (
     <div>
+      <Header/>
       <h1>Search Movie</h1>
       {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
       {movies ? (

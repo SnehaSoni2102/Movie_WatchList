@@ -20,6 +20,9 @@ validation on form - using rejex for email and password validation. If user is t
 ##
 Created Sign Up/Sign In Authentication - if user is Authenticated then only they can go to search page. Implemented this using FiIREBASE- Create a password-based accoun and Sign in a user with an email address and password.
 ##
+Redux ToolKit - Created Redux Store with userSlice
+##
+useNavigate - if Credentials are correct in sign in / Sign up. its navigate to Search page
 
 ## Features
 ### Login/Sign 
