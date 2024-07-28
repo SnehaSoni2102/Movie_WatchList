@@ -25,6 +25,8 @@ Redux ToolKit - Created Redux Store with userSlice
 useNavigate - if Credentials are correct in sign in / Sign up. its navigate to Search page
 ##
 Sign out - redirect to sign in page
+##
+Search Bar - enter movie name and it will give each and every movie related to your search
 
 ## Features
 ### Login/Sign 

@@ -1,0 +1,13 @@
+.placeholder {
+    color: #9ca3af; /* Tailwind's default placeholder color */
+  }
+  
+  @media (min-width: 768px) {
+    .placeholder::placeholder {
+      content: "Search for a movie (wide screen)";
+    }
+  }
+  /* Ensure you have this in your styles.css file */
+input::placeholder {
+  text-align: center;
+}
