@@ -1,16 +1,19 @@
 import { checkValidData } from '../utils/validate';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Header } from './Header';
 import { useRef, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../utils/firebase';
+import { useDispatch } from 'react-redux';
+import { addUser} from "../utils/userSlice";
 
 export const Login = () => {
 
   const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-
+  const dispatch = useDispatch();
+  const name =useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
@@ -29,9 +32,17 @@ export const Login = () => {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+    updateProfile(auth.user, {
+      displayName: name.current.value,
+    }).then(() => {
+      const {uid, email, displayName} = auth.currentUser;
+      dispatch(addUser({uid:uid, email:email, displayName:displayName}));
+      navigate("/search")
+    }).catch((error) => {
+      // An error occurred
+     setErrorMessage(error.message);
+    });
     console.log(user);
-    navigate("/search")
-    // ...
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -78,7 +89,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       <form onSubmit={(e)=> e.preventDefault() } className="flex flex-col justify-start absolute w-3/12 h-3/4 p-12  bg-black bg-opacity-75 my-36 mx-auto right-0 left-0 gap-4">
         <h1 className='font-bold text-3xl text-white my-4'>{isSignInForm? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm && (<div className='p-0.5 bg-gray-400 bg-opacity-25 rounded-lg'>
-            <input type="text" placeholder='Enter Full Name' className='w-full h-12 p-2 bg-gray-200 bg-opacity-25 rounded-md'/>
+            <input ref={name} type="text" placeholder='Enter Full Name' className='w-full h-12 p-2 bg-gray-200 bg-opacity-25 rounded-md'/>
         </div>)
         }
         <div className='p-0.5 bg-gray-400 bg-opacity-25 rounded-lg'>
