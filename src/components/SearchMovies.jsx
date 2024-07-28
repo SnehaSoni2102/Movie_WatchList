@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Header } from "./Header";
 import { MovieList } from "./MovieList";
 import { SearchBox } from "./SearchBox";
+import { AddwatchList } from "./AddwatchList";
 
 export const SearchMovie = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [searchValue , setSearchValue] = useState("");
+  const [watchList, setWatchList] = useState([]);
 
   useEffect(() => {
     fetchData(searchValue);
@@ -32,18 +34,35 @@ export const SearchMovie = () => {
       setError(error);
     }
   };
-    console.log("MMm",movies);
+  const handleAddToWatchList = (movie) => {
+    setWatchList((prevWatchList) => [...prevWatchList, movie]);
+    console.log("Added to Watch List:", movie);
+    console.log("watchList" , watchList);
+  };
+  const handleRemoveFromWatchList = (movieToRemove) => {
+    setWatchList((prevWatchList) =>
+      prevWatchList.filter((movie) => movie.imdbID !== movieToRemove.imdbID)
+    );
+    console.log("Removed from Watch List:", movieToRemove);
+  };
   return (
     <>
     <Header />
     <div className="flex flex-col justify-center items-center mt-40 gap-20 ">
     <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
     {movies.Search ? (
-      
-      <MovieList movies={movies.Search} />
+      <MovieList movies={movies.Search} onAddToWatchList={handleAddToWatchList} />
     ) : (
       <p></p>
     )}
+    <h1>Watach List</h1>
+    {watchList.length > 0 ? (
+           <MovieList
+           movies={watchList}
+           onRemoveFromWatchList={handleRemoveFromWatchList} />
+        ) : (
+          <p className="text-center text-gray-500">Your watch list is empty</p>
+        )}
   </div>
   </>
   );

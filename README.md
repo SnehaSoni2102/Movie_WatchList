@@ -27,6 +27,10 @@ useNavigate - if Credentials are correct in sign in / Sign up. its navigate to S
 Sign out - redirect to sign in page
 ##
 Search Bar - enter movie name and it will give each and every movie related to your search
+##
+add to watchlist on search elements - by clicking on the button . you can add to watchList
+##
+Remove from watchList- by clicking on button you can remove element from watchList
 
 ## Features
 ### Login/Sign 
