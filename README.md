@@ -1,5 +1,8 @@
 # MOVIE_WATCH_LIST
 
+Hosting URL: https://moviewatchlist-44dc4.web.app
+##
+
 -Created React app 
 ##
 -configured TailwindCss 
@@ -34,6 +37,7 @@ Remove from watchList- by clicking on button you can remove element from watchLi
 ##
 Responsive
 ##
+Hosting on FireBase
 
 ## Features
 ### Login/Sign 
