@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Header } from "./Header";
 import { MovieList } from "./MovieList";
 import { SearchBox } from "./SearchBox";
-import { AddwatchList } from "./AddwatchList";
+
 
 export const SearchMovie = () => {
   const [movies, setMovies] = useState([]);
@@ -55,7 +55,9 @@ export const SearchMovie = () => {
     ) : (
       <p></p>
     )}
-    <h1>Watach List</h1>
+    <div className="flex flex-wrap justify-center bg-red-500 md:w-1/2 w-3/4 rounded-sm text-white font-bold h-10 items-center">
+    <h1 className="">Watach List</h1>
+    </div>
     {watchList.length > 0 ? (
            <MovieList
            movies={watchList}

@@ -31,6 +31,9 @@ Search Bar - enter movie name and it will give each and every movie related to y
 add to watchlist on search elements - by clicking on the button . you can add to watchList
 ##
 Remove from watchList- by clicking on button you can remove element from watchList
+##
+Responsive
+##
 
 ## Features
 ### Login/Sign 

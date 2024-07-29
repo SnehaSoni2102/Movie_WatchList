@@ -1,6 +1,6 @@
 export const MovieList = (props) => {
     return (
-      <div className="grid grid-cols-5 justify-center gap-4">
+      <div className="grid md:grid-cols-5 grid-cols-2 justify-center md:gap-4 gap-2">
           {props.movies.length > 0 ? (
         props.movies.map((movie, index) => (
           <div
